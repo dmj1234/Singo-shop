@@ -1,0 +1,24 @@
+@font-face {font-family: "iconfont";
+    src: url('//at.alicdn.com/t/font_2364746_nyprz0tpaw.eot?t=1612370132407'); /* IE9 */
+    src: url('//at.alicdn.com/t/font_2364746_nyprz0tpaw.eot?t=1612370132407#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOoAAsAAAAAB3gAAANbAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqCZII+ATYCJAMMCwgABCAFhG0HMxuBBsiuMQbXD4Q0NFSkVUk1tS07et+dyATOx1g80M+h7ydpSkAjCShRAYGd6xQw6t3kHABK1tOdrHs/rxDTI6FF9sHZlD51ercPR0AfwtTNH7ZWCySbQFEXeL60qAuz0rjzwBOItKwowewBW+1/sAHHmmhmDUwngJ14VgPY+8S909/yAOezLJc5xvmnLsA4oID2xjZlARdIQN4wduVFHCcgRwMvgqlNVhHQkzDGBYSNk5ACeimLpKY+yBKkJUsT4SBtWdGu6BkO+N8P/4wKekQyYsbUWauTWRD3c97n7QwNp8olSMdzga0iRh8gISwu9cylGWb6aMpRNFr15alEEI0V//gSVZeu9I8XEVJGbR7ogtmIn9p8Aj93hgjEIEWCrYC9kFHWLRaKC4ynboLLHzAz6fDdqyGDqDhmgUG4fjs5s3W+8cmlLi+c//j2SfC9h9cPTttMOo7bHB+BYXvtmc30ztnH0BOr4Rmbiuex4UPpbGoX22DomLsPze+Lxt51lV32x5ZBl8fu19bjU3a6zk2xGvEdSTW7FmelUG4BlS30hfG7am5Y/vs1JIvYx2Lnx1GPnePYHXpD6zPqpuJk28LCZBveKVHbmIkGu3ofDPbDIrUc01/XL+vMdG3vKZ7WO954EycKp9mEfxPqH29uBB1h5x9E+S5zP5Npd8fEoaLxe1U4fL5tGM6vu+ESNdOSH88HBXUAhsVD8SDOzRHn/JffCO/SXSLH/s+iCfjGv3cwPCzR3ibrrL2BvyBt2ZCoelibyBJbovtiU+/IFQHrcjCcESjxur+uvHUtQZbyGJFM9YhlaaMkjD5kyDUGqSwTkKNX6upcpTBNIclGj36AoMgmIgXuI1bkgpIwXiFDhV9IFQVN5JgdSrfM1RHEZMqMKIJYSDdDMaNUcJadGAT1BUhYL6NwUu6zShDmxXHonxXZfCpSIDzGDL5BGEAIBzmslMMUcBqSyZRQhZUSxBAfESGqCN+8L3uSD6OUAwNTYAiFQFgQrRkkxlBS4NzWhEHu8wUQoXoyFFxDqgiWQDCeuHPInw+/FpRUjaIV6VrO4TUQCkAQHIiDKclBKcCFyMyMEqQqHySBMAgfoh4plQi+qBnXVuMzv07+fNsgh7FHHKIQh0SyaZJTGptWAAAA') format('woff2'),
+    url('//at.alicdn.com/t/font_2364746_nyprz0tpaw.woff?t=1612370132407') format('woff'),
+    url('//at.alicdn.com/t/font_2364746_nyprz0tpaw.ttf?t=1612370132407') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('//at.alicdn.com/t/font_2364746_nyprz0tpaw.svg?t=1612370132407#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mima:before {
+    content: "\e659";
+}
+
+.icon-my:before {
+    content: "\e681";
+}
