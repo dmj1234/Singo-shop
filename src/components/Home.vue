@@ -15,15 +15,16 @@
       <el-aside >
 <!--        侧边栏菜单区域-->
           <el-menu
+            unique-opened
             background-color="#333744"
             text-color="#fff"
-            active-text-color="#ffd04b">
+            active-text-color="#409EFF">
 <!--            一级菜单-->
             <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
 <!--              一级惨淡的模板区域-->
               <template slot="title">
 <!--                图标-->
-                <i class="el-icon-location"></i>
+                <i class="iconsObj[items.id]"></i>
 <!--                文本-->
                 <span>{{ item.authName }}</span>
               </template>
@@ -31,7 +32,7 @@
               <el-menu-item :index="subItem.id + '' " v-for="subItem in item.children" :key="subItem.id">
                 <template slot="title">
                   <!--                图标-->
-                  <i class="el-icon-location"></i>
+                  <i class="el-icon-menu"></i>
                   <!--                文本-->
                   <span>{{ subItem.authName }}</span>
                 </template>
@@ -51,7 +52,14 @@ export default {
   data () {
     return {
       // 左侧菜单数据
-      menuList: []
+      menuList: [],
+      iconsObj: {
+        125: 'iconfont icon-user',
+        103: 'iconfont icon-tijikongjian',
+        101: 'iconfont icon-shangpin',
+        102: 'iconfont icon-danju',
+        145: 'iconfont icon-baobiao'
+      }
     }
   },
   created () {
@@ -93,8 +101,14 @@ export default {
 }
 .el-aside{
   background-color: #333744;
+.el-menu{
+  border-right: none;
+}
 }
 .el-main{
   background-color: #EAEDF1;
+}
+.iconfont{
+  margin-left: 10px;
 }
 </style>
