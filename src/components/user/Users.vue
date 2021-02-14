@@ -33,8 +33,27 @@
             </el-switch>
           </template>
         </el-table-column>
-        <el-table-column label="操作" ></el-table-column>
+        <el-table-column label="操作" width="180px" >
+<!--          <template slot-scope="scope">-->
+          <template >
+            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+            <el-button type="danger" icon="el-icon-delete" size="mini"></el-button>
+            <el-tooltip  effect="dark" content="分配角色" placement="top">
+                <el-button type="warning" icon="el-icon-setting" size="mini" :enterable="false"></el-button>
+            </el-tooltip>
+          </template>
+        </el-table-column>
       </el-table>
+<!--      分页区域-->
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="queryInfo.pagenum"
+        :page-sizes="[1, 2, 3, 4]"
+        :page-size="queryInfo.pagesize"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="total">
+      </el-pagination>
     </el-card>
 
   </div>
@@ -63,8 +82,17 @@ export default {
       if (res.meta.status !== 200) return this.$message.error('获取用户列表失败')
       this.userList = res.data.users
       this.total = res.data.total
-
-      console.log(res)
+      // console.log(res)
+    },
+    handleSizeChange(newSize){
+      // console.log(newSize)
+      this.queryInfo.pagesize = newSize
+      this.getUserList()
+    },
+    handleCurrentChange(newPage){
+      // console.log(newPage)
+      this.queryInfo.pagenum = newPage
+      this.getUserList()
     }
   }
 
