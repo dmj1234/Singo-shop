@@ -11,14 +11,19 @@
 
 <!--    页面主体区域-->
     <el-container>
+
 <!--      侧边栏-->
-      <el-aside >
+      <el-aside :width="isCollapse ? '64px' : '200px'">
+        <div class="toggle-button" @click="toggleCollapse">|||</div>
 <!--        侧边栏菜单区域-->
           <el-menu
             unique-opened
+            :collapse-transition="false"
+            :collapse="isCollapse"
             background-color="#333744"
             text-color="#fff"
-            active-text-color="#409EFF">
+            active-text-color="#409EFF"
+            router>
 <!--            一级菜单-->
             <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
 <!--              一级惨淡的模板区域-->
@@ -29,7 +34,7 @@
                 <span>{{ item.authName }}</span>
               </template>
 <!--              二级菜单-->
-              <el-menu-item :index="subItem.id + '' " v-for="subItem in item.children" :key="subItem.id">
+              <el-menu-item :index="'/' + subItem.path" v-for="subItem in item.children" :key="subItem.id">
                 <template slot="title">
                   <!--                图标-->
                   <i class="el-icon-menu"></i>
@@ -42,7 +47,10 @@
 
       </el-aside>
 <!--      右侧内容主体-->
-      <el-main>Main</el-main>
+      <el-main>
+<!--        路由占位符-->
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 
@@ -54,12 +62,14 @@ export default {
       // 左侧菜单数据
       menuList: [],
       iconsObj: {
-        125: 'iconfont icon-user',
-        103: 'iconfont icon-tijikongjian',
-        101: 'iconfont icon-shangpin',
-        102: 'iconfont icon-danju',
-        145: 'iconfont icon-baobiao'
-      }
+        // '125': 'iconfont icon-user',
+        // '103': 'iconfont icon-tijikongjian',
+        // '101': 'iconfont icon-shangpin',
+        // '102': 'iconfont icon-danju',
+        // '145': 'iconfont icon-baobiao'
+      },
+      isCollapse: false
+      // 是否折叠
     }
   },
   created () {
@@ -75,6 +85,10 @@ export default {
       const { data: res } = await this.$http.get('menus')
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.menuList = res.data
+    },
+    // 点击按钮切换菜单的折叠与展开
+    toggleCollapse () {
+      this.isCollapse = !this.isCollapse
     }
   }
 }
@@ -110,5 +124,14 @@ export default {
 }
 .iconfont{
   margin-left: 10px;
+}
+.toggle-button{
+  background-color: #4A5064;
+  font-size: 10px;
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.2em;
+  cursor: pointer;
 }
 </style>
