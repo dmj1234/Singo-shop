@@ -15,7 +15,7 @@
       </el-col>
     </el-row>
 <!--    表格-->
-
+<tree-table :data="catelist" :columns="columns"></tree-table>
 <!--    分页-->
   </el-card>
 </div>
@@ -24,11 +24,36 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      querInfo: {
+        type: 3,
+        pagenum: 1,
+        pagesize: 5
+      },
+      // 商品分类列表，默认为空
+      catelist: [],
+      total: 0,
+      columns: [{
+        label: '分类名称',
+        prop: 'cat_name'
+      }]
+    }
   },
   created () {
+    this.getCateList()
   },
-  methods: {}
+  methods: {
+    // 获取商品数据
+    async getCateList() {
+      const { data: res } = await this.$http.get('categories', { params:this.querInfo })
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取商品列表失败')
+      }
+      // 把数据列表赋值给catelist
+      this.catelist = res.data.result
+      this.total = res.data.total
+    }
+  }
 }
 </script>
 
